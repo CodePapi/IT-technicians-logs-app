@@ -1,0 +1,58 @@
+{
+  "logs": [
+    {
+      "id": 1,
+      "message": "changed hard drive on workstation",
+      "attention": false,
+      "date": "10-10-2020",
+      "tech": "John Doe"
+    },
+    {
+      "id": 2,
+      "message": "Did not go to work",
+      "attention": true,
+      "date": "10-10-2020",
+      "tech": "Marcus Johnbosco"
+    },
+    {
+      "id": 3,
+      "message": "worked on a new laptop installation",
+      "attention": false,
+      "date": "10-10-2020",
+      "tech": "John Smith"
+    },
+    {
+      "id": 5
+    },
+    {
+      "firstName": "James",
+      "lastName": "Blond",
+      "id": 6
+    },
+    {
+      "message": "i am at home",
+      "name": "Emmanuel james",
+      "id": 7
+    }
+  ],
+  "techs": [
+    {
+      "id": 1,
+      "firstName": "John",
+      "lastName": "Doe"
+    },
+    {
+      "id": 3,
+      "firstName": "John",
+      "lastName": "Smith"
+    },
+    {
+      "id": 4
+    },
+    {
+      "firstName": "James",
+      "lastName": "Blond",
+      "id": 5
+    }
+  ]
+}
