@@ -33,7 +33,7 @@ useEffect(()=>{
                     System logs
                 </h4>
             </li>
-            {!loading&& logs.length===0?(<h4>No logs</h4>):
+            {!loading&& logs.lenght===0?(<h4>No logs</h4>):
             (logs.map(log=>
             <LogItems log={log} key={log.id}/>))}
         </ul>
@@ -41,6 +41,7 @@ useEffect(()=>{
 }
 Logs.propTypes={
     log: PropTypes.object.isRequired,
+    getLogs:PropTypes.func.isRequired,
 }
 const mapStateToProps=state=>({
  log:state.log

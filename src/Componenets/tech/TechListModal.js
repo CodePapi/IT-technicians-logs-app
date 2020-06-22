@@ -28,7 +28,11 @@ const getTechs= async()=>{
            <div className='modal-content'>
                <h4>Technician List</h4>
                <ul className="collection">
-    {!load && techs.map(tech=>(<li className="collection"><TechItems tech={tech} key={tech.id}></TechItems></li>))}
+    {!load && techs.map(tech=>(<li 
+    className="collection">
+        <TechItems tech={tech}
+         key={tech.id}
+         ></TechItems></li>))}
 
                </ul>
 

@@ -35,19 +35,18 @@ useEffect(()=>{
      <Logs/>
     
 
-  <a className="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
 
   
 <div id="modal1" className="modal">
   <div className="modal-content">
-    <h4>Modal Header</h4>
+    <h4>Modal Testing</h4>
     <p><iframe src="http://localhost:5000/techs" title="lag"></iframe></p>
   </div>
   <div className="modal-footer">
     <a href="/" className="modal-close waves-effect waves-green btn-flat">Agree</a>
   </div>
 </div>
-        <button data-target="modal1" className="btn modal-trigger">Modal</button>
+        <button data-target="modal1" className="btn modal-trigger">JSON Logs</button>
         
      
       </div>

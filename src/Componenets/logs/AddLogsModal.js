@@ -1,7 +1,10 @@
 import React, {useState} from 'react'
+import {connect} from 'react-redux'
+import PropTypes from 'prop-types'
+import {addLogs} from '../../actions/logActions'
 import M from "materialize-css/dist/js/materialize.min.js"
 
- const AddLogsModal = () => {
+ const AddLogsModal = ({addLogs}) => {
 
     const [message, setMessage] = useState('')
     const [attention, setAttention] = useState(false)
@@ -11,6 +14,16 @@ import M from "materialize-css/dist/js/materialize.min.js"
             M.toast({html: "please enter  message and tech"})
         }
         else{
+
+            const newLog={
+                message,
+                attention,
+                tech,
+                date: new Date()
+            }
+            addLogs(newLog)
+            M.toast({html:`Log added by ${tech}`})
+            //clear all fields
             setAttention(false)
             setMessage('')
             setTech('')
@@ -19,7 +32,7 @@ import M from "materialize-css/dist/js/materialize.min.js"
     return (
         <div id="add-log-modal" className='modal' style={modalStyle}>
             <div className="modal-content">
-                <h4>Enter System Log</h4>
+                <h4>Enter System</h4>
                 <div className="row">
                     <div className='inputField'>
                         <input 
@@ -39,7 +52,7 @@ import M from "materialize-css/dist/js/materialize.min.js"
                        className="browser-default" 
                        onChange={e=>setTech(e.target.value)}>
                            <option value="" disabled>
-                                Select Technician
+                                Select Technician add
                            </option>
                            <option value="John Doe">
                                John Doe
@@ -47,8 +60,14 @@ import M from "materialize-css/dist/js/materialize.min.js"
                            <option value="John Smith">
                                John Smith
                            </option>
-                           <option value="Sam Smith">
-                               Sam Smith
+                           <option value="Chris Smith">
+                              Chris Smith
+                           </option>
+                           <option value="Mike Scoffield">
+                               Mike Scoffield
+                           </option>
+                           <option value="Luke Heen">
+                              Luke Heen
                            </option>
 
                        </select>
@@ -60,10 +79,10 @@ import M from "materialize-css/dist/js/materialize.min.js"
                         <label>
                             <p>
                             <input 
-                        type="checkbox" 
-                        value={attention} 
+                        type="button" 
+                        value={true} 
                         checked={attention} 
-                        onChange={e=>setAttention(!attention)}
+                        onClick={e=>setAttention(e.target.value=!attention)}
                         className="filled"
                         />
                             </p>
@@ -88,4 +107,7 @@ const modalStyle={
     height:"75%"
 }
 
-export default AddLogsModal
+AddLogsModal.propTypes={
+    addLogs: PropTypes.func.isRequired,}
+
+export default connect(null, {addLogs}) (AddLogsModal)
