@@ -1,44 +1,25 @@
 {
   "logs": [
     {
-      "id": 1,
-      "message": "changed hard drive on workstation",
-      "attention": false,
-      "date": "10-10-2020",
-      "tech": "John Doe"
-    },
-    {
-      "id": 2,
-      "message": "Did not go to work",
+      "message": "hello",
       "attention": true,
-      "date": "10-10-2020",
-      "tech": "John Smith"
+      "tech": "Sam Smith",
+      "date": "22- 5 -2020",
+      "id": 1
     },
     {
       "id": 3,
-      "message": "worked on a new laptop installation",
+      "message": "i did nothing",
       "attention": false,
-      "date": "10-10-2020",
-      "tech": "John Smith"
+      "tech": "John Smith",
+      "date": "2020-06-22T15:58:19.230Z"
     },
     {
-      "id": 4
-    },
-    {
-      "id": 5
-    },
-    {
-      "id": 6
-    },
-    {
-      "id": 7
-    },
-    {
-      "message": "i did all",
-      "attention": false,
+      "message": "you worked on c#",
+      "attention": true,
       "tech": "John Doe",
-      "date": "2020-06-22T11:58:22.805Z",
-      "id": 8
+      "date": "22- 5 -2020",
+      "id": 4
     }
   ],
   "techs": [

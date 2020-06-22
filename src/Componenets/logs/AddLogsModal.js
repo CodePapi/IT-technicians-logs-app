@@ -19,8 +19,11 @@ import M from "materialize-css/dist/js/materialize.min.js"
                 message,
                 attention,
                 tech,
-                date: new Date()
+                date: new Date().getDate() + "- "+ 
+                new Date().getMonth()+" -"+
+                 new Date().getFullYear()
             }
+
             addLogs(newLog)
             M.toast({html:`Log added by ${tech}`})
             //clear all fields
@@ -32,7 +35,7 @@ import M from "materialize-css/dist/js/materialize.min.js"
     return (
         <div id="add-log-modal" className='modal' style={modalStyle}>
             <div className="modal-content">
-                <h4>Enter System</h4>
+                <h4>Enter System Log</h4>
                 <div className="row">
                     <div className='inputField'>
                         <input 
@@ -52,7 +55,7 @@ import M from "materialize-css/dist/js/materialize.min.js"
                        className="browser-default" 
                        onChange={e=>setTech(e.target.value)}>
                            <option value="" disabled>
-                                Select Technician add
+                                Select Technician 
                            </option>
                            <option value="John Doe">
                                John Doe
@@ -60,33 +63,28 @@ import M from "materialize-css/dist/js/materialize.min.js"
                            <option value="John Smith">
                                John Smith
                            </option>
-                           <option value="Chris Smith">
-                              Chris Smith
+                           <option value="Sam Smith">
+                              James Smith
                            </option>
-                           <option value="Mike Scoffield">
-                               Mike Scoffield
-                           </option>
-                           <option value="Luke Heen">
-                              Luke Heen
-                           </option>
+                           
 
                        </select>
                         
                     </div>
-
+                   
                     <div className='inputField'>
                         
                         <label>
                             <p>
                             <input 
                         type="button" 
-                        value={true} 
+                        value={attention} 
                         checked={attention} 
-                        onClick={e=>setAttention(e.target.value=!attention)}
+                        onClick={e=>setAttention(!attention)}
                         className="filled"
                         />
                             </p>
-                            <span>Needs attention</span>
+                            <span>Needs attention?</span>
                         </label>
                     </div>
 
