@@ -1,18 +1,11 @@
 {
   "logs": [
     {
-      "id": 2,
-      "message": "I went shopping for the MD",
-      "attention": true,
-      "tech": "Sam Smith",
-      "date": "2020-06-23T11:04:22.366Z"
-    },
-    {
-      "message": "learned c#",
+      "id": 3,
+      "message": "learned c# and python",
       "attention": true,
       "tech": "Presh Chika",
-      "date": "2020-06-23T12:23:07.653Z",
-      "id": 3
+      "date": "2020-06-23T13:03:47.759Z"
     }
   ],
   "techs": [
