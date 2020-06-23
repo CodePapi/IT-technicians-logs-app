@@ -1,14 +1,6 @@
 import {
-  GET_LOGS,
-  SET_LOADING,
-  LOGS_ERROR,
-  ADD_LOG,
-  DELETE_LOGS,
-  SET_CURRENT,
-  CLEAR_CURRENT,
-  UPDATE_LOG,
-  SEARCH_LOGS,
-} from "./types";
+  GET_LOGS, SET_LOADING, LOGS_ERROR, ADD_LOG, DELETE_LOG, SET_CURRENT, CLEAR_CURRENT, UPDATE_LOG, SEARCH_LOGS
+} from './types'
 
 // export const getLogs = () => {
 //   return async (dispatch, getState) => {
@@ -25,135 +17,142 @@ import {
 // }
 
 // Get logs from server
-export const getLogs = () => async (dispatch) => {
+export const getLogs = () => async dispatch => {
   try {
-    setLoading();
+    setLoading()
 
-    const res = await fetch("/logs");
-    const data = await res.json();
+    const res = await fetch('/logs')
+    const data = await res.json()
 
     dispatch({
       type: GET_LOGS,
-      payload: data,
-    });
+      payload: data
+    })
+
   } catch (err) {
     dispatch({
       type: LOGS_ERROR,
-      payload: err.response.statusText,
-    });
+      payload: err.response.statusText
+    })
   }
-};
+}
 
 // Add a new log in server
-export const addLogs = (log) => async (dispatch) => {
+export const addLog = (log) => async dispatch => {
   try {
-    setLoading();
+    setLoading()
 
-    const res = await fetch("/logs", {
-      method: "POST",
+    const res = await fetch('/logs', {
+      method: 'POST',
       body: JSON.stringify(log),
       headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    const data = await res.json();
+        'Content-Type': 'application/json'
+      }
+    })
+    const data = await res.json()
 
     dispatch({
       type: ADD_LOG,
-      payload: data,
-    });
+      payload: data
+    })
+
   } catch (err) {
     dispatch({
       type: LOGS_ERROR,
-      payload: err.response.statusText,
-    });
+      payload: err.response.statusText
+    })
   }
-};
+}
 
 // DELETE log from server
-export const deleteLog = (id) => async (dispatch) => {
+export const deleteLog = (id) => async dispatch => {
   try {
-    setLoading();
+    setLoading()
 
     await fetch(`/logs/${id}`, {
-      method: "DELETE",
-    });
+      method: 'DELETE'
+    })
 
     dispatch({
-      type: DELETE_LOGS,
-      payload: id,
-    });
+      type: DELETE_LOG,
+      payload: id
+    })
+
   } catch (err) {
     dispatch({
       type: LOGS_ERROR,
-      payload: err.response.statusText,
-    });
+      payload: err.response.statusText
+    })
   }
-};
+}
 
 // UPDATE log on server
-export const updateLog = (log) => async (dispatch) => {
+export const updateLog = log => async dispatch => {
   try {
-    setLoading();
+    setLoading()
 
     const res = await fetch(`/logs/${log.id}`, {
-      method: "PUT",
+      method: 'PUT',
       body: JSON.stringify(log),
       headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    const data = res.json();
+        'Content-Type': 'application/json'
+      }
+    })
+    const data = res.json()
 
     dispatch({
       type: UPDATE_LOG,
-      payload: data,
-    });
+      payload: data
+    })
+
   } catch (err) {
     dispatch({
       type: LOGS_ERROR,
-      payload: err.response.statusText,
-    });
+      payload: err.response.statusText
+    })
   }
-};
+}
 
 // Search logs in server
-export const searchLogs = (text) => async (dispatch) => {
+export const searchLogs = text => async dispatch => {
   try {
-    setLoading();
+    setLoading()
 
-    const res = await fetch(`/logs?q=${text}`);
-    const data = await res.json();
+    const res = await fetch(`/logs?q=${text}`)
+    const data = await res.json()
 
     dispatch({
       type: SEARCH_LOGS,
-      payload: data,
-    });
+      payload: data
+    })
+
   } catch (err) {
     dispatch({
       type: LOGS_ERROR,
-      payload: err.response.statusText,
-    });
+      payload: err.response.statusText
+    })
   }
-};
+}
+
 
 // set current log
-export const setCurrent = (log) => {
+export const setCurrent = log => {
   return {
     type: SET_CURRENT,
-    payload: log,
-  };
-};
+    payload: log
+  }
+}
 
 // clear current log
 export const clearCurrent = () => {
   return {
-    type: CLEAR_CURRENT,
-  };
-};
+    type: CLEAR_CURRENT
+  }
+}
+
 
 export const setLoading = () => {
   return {
-    type: SET_LOADING,
-  };
-};
+    type: SET_LOADING
+  }
+}

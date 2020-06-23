@@ -2,12 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 
-const TechItems= ({tech}) => {
+const TechItems= ({techs}) => {
     return (
         <li className="collection-item">
             <div>
                 <a href='#!'  className="secondary-content">
-                    {tech.firstName + "   " + tech.lastName} 
+                    {techs.firstName + "   " + techs.lastName} 
                 </a>
                 <br/>
                
@@ -20,7 +20,7 @@ const TechItems= ({tech}) => {
 }
 
 TechItems.propTypes = {
-tech: PropTypes.object.isRequired 
+techs: PropTypes.object.isRequired 
 }
 
 export default TechItems

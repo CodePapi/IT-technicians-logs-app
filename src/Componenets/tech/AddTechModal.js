@@ -49,8 +49,7 @@ import M from "materialize-css/dist/js/materialize.min.js"
 
             </div>
             <div className="modal-footer">
-                <a href="!#" onClick={onSubmit} 
-                className="modal-close wave-effect wave-green btn-flat">
+                <a href="#!" onClick={onSubmit} className="modal-close wave-effect wave-green btn-flat">
                     Enter
                 </a>
             </div>

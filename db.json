@@ -1,11 +1,18 @@
 {
   "logs": [
     {
-      "message": "i went hunting",
+      "id": 2,
+      "message": "I went shopping for the MD",
       "attention": true,
-      "tech": "John Smith",
-      "date": "23- 5 -2020",
-      "id": 1
+      "tech": "Sam Smith",
+      "date": "2020-06-23T11:04:22.366Z"
+    },
+    {
+      "message": "learned c#",
+      "attention": true,
+      "tech": "Presh Chika",
+      "date": "2020-06-23T12:23:07.653Z",
+      "id": 3
     }
   ],
   "techs": [
@@ -23,6 +30,11 @@
       "firstName": "James",
       "lastName": "Blond",
       "id": 3
+    },
+    {
+      "firstName": "Presh",
+      "lastName": "Chika",
+      "id": 4
     }
   ]
 }
