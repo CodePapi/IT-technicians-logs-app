@@ -1,25 +1,11 @@
 {
   "logs": [
     {
-      "message": "hello",
+      "message": "i went hunting",
       "attention": true,
-      "tech": "Sam Smith",
-      "date": "22- 5 -2020",
-      "id": 1
-    },
-    {
-      "id": 3,
-      "message": "i did nothing",
-      "attention": false,
       "tech": "John Smith",
-      "date": "2020-06-22T15:58:19.230Z"
-    },
-    {
-      "message": "you worked on c#",
-      "attention": true,
-      "tech": "John Doe",
-      "date": "22- 5 -2020",
-      "id": 4
+      "date": "23- 5 -2020",
+      "id": 1
     }
   ],
   "techs": [
